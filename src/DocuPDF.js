@@ -1,7 +1,8 @@
 import React from "react";
-import { Document, Page, Text, View, Image } from "@react-pdf/renderer";
+import {Document, Page, Text, View, Image} from "@react-pdf/renderer";
+import logo from "./images/logoNV.png";
 
-const DocuPDF = ({ poema }) => {
+const DocuPDF = ({poema}) => {
   const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
   return (
     <Document>
@@ -25,15 +26,13 @@ const DocuPDF = ({ poema }) => {
             padding: 10,
           }}
         >
-          <Text style={{ color: "#3388af", fontSize: "42px" }}>
-            {poema ? poema.title : "..."}
-          </Text>
-          <Text>Por {poema ? poema.poet.name : "..."}</Text>
           <Image
-            src="https://picsum.photos/600/400"
-            alt="random image"
-            style={{ maxWidth: "600px", maxHeight: "400" }}
-          />
+            src={logo}
+            alt="logo"
+            style={{maxWidth: "600px", maxHeight: "400"}}
+          />{" "}
+          {/* <Text style={{color: "#3388af", fontSize: "42px"}}>TITULO</Text> */}
+          <Text>Plan Alimentario</Text>
           <Text
             style={{
               color: "gray",
@@ -43,10 +42,7 @@ const DocuPDF = ({ poema }) => {
           >
             {lorem}
           </Text>
-
-          <Text style={{ textAlign: "justify", marginTop: "22px" }}>
-            {poema ? poema.content : null}
-          </Text>
+          <Text style={{textAlign: "justify", marginTop: "22px"}}>AA</Text>
         </View>
       </Page>
     </Document>

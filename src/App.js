@@ -1,4 +1,4 @@
-import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
+import {PDFDownloadLink, PDFViewer} from "@react-pdf/renderer";
 import React from "react";
 import DocuPDF from "./DocuPDF";
 import Button from "react-bootstrap/Button";
@@ -9,11 +9,11 @@ function App() {
   const [verWeb, setVerWeb] = React.useState(false);
   const [verPDF, setVerPDF] = React.useState(false);
   function fetchPoema() {
-    fetch("https://www.poemist.com/api/v1/randompoems")
+    fetch("https://poetrydb.org/title/Ozymandias/lines.json")
       .then((response) => response.json())
       .then((data) => {
-        setPoema(data[0]);
-        console.log(data[0]);
+        console.log(data[0].lines[0]);
+        setPoema(data[0].lines[0]);
       });
   }
 
@@ -58,13 +58,13 @@ function App() {
   );
 
   return (
-    <div style={{ minHeight: "100vh" }}>
+    <div style={{minHeight: "100vh"}}>
       <Menu />
       {poema ? (
         <>
           {verWeb ? <VistaWeb poema={poema} /> : null}
           {verPDF ? (
-            <PDFViewer style={{ width: "100%", height: "90vh" }}>
+            <PDFViewer style={{width: "100%", height: "90vh"}}>
               <DocuPDF poema={poema} />
             </PDFViewer>
           ) : null}

@@ -1,6 +1,7 @@
 import React from "react";
+import logo from "./images/logoNV.png";
 
-const VistaWeb = ({ poema }) => {
+const VistaWeb = ({poema}) => {
   const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
   return (
     <div
@@ -11,15 +12,20 @@ const VistaWeb = ({ poema }) => {
         alignItems: "center",
       }}
     >
-      <h1 style={{ color: "#3388af", fontSize: "42px" }}>
-        {poema ? poema.title : "..."}
-      </h1>
-      <p>Por {poema ? poema.poet.name : "..."}</p>
       <img
-        src="https://picsum.photos/600/400"
-        alt="random image"
-        style={{ maxWidth: "600px", maxHeight: "400" }}
+        src={logo}
+        alt="random"
+        style={{maxWidth: "600px", maxHeight: "400"}}
       />
+      {/* <h1 style={{color: "#3388af", fontSize: "42px"}}>Plan Alimentario</h1> */}
+      <p>Plan Alimentario</p>
+      <table>
+        <tr>
+          <td> cell 1</td>
+          <td> cell 2</td>
+          <td> cell 3</td>
+        </tr>
+      </table>
       <p
         style={{
           color: "gray",
@@ -30,7 +36,6 @@ const VistaWeb = ({ poema }) => {
         {lorem}
       </p>
       <br />
-      <p style={{ maxWidth: "50ch" }}>{poema ? poema.content : null}</p>
     </div>
   );
 };
